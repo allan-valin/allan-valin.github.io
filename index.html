@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Allan Valim</title>
+<meta name="description" content="Portfolio: games, VR, robotics, speech and OCR research, photography.">
+<style>
+  :root { --bg:#f6f5f1; --fg:#1c1c1e; --mute:#66666c; --card:#fff; --line:#e3e2dc; --accent:#3452c8; --tag:#eceae3; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#131518; --fg:#e8e6e1; --mute:#9094a0; --card:#1b1e24; --line:#2a2e37; --accent:#8da2fb; --tag:#262a33; } }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif; }
+  a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+  .wrap { max-width:1000px; margin:0 auto; padding:0 16px; }
+  header { padding:40px 0 20px; }
+  header h1 { margin:0; font-size:32px; letter-spacing:-.01em; }
+  header p { margin:8px 0 0; color:var(--mute); max-width:640px; }
+  nav { position:sticky; top:0; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); z-index:5; }
+  nav .wrap { display:flex; gap:4px 18px; flex-wrap:wrap; padding:10px 16px; font-size:14px; }
+  nav a { color:var(--fg); }
+  .links { margin-top:14px; display:flex; gap:14px; flex-wrap:wrap; font-size:14px; }
+  section { padding:34px 0 6px; }
+  h2 { font-size:22px; margin:0 0 6px; }
+  .lead { color:var(--mute); margin:0 0 18px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(290px,1fr)); gap:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
+  .card .body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .card h3 { margin:0; font-size:17px; }
+  .card p { margin:0; color:var(--mute); font-size:14px; }
+  .meta { font-size:12px; color:var(--mute); text-transform:uppercase; letter-spacing:.05em; }
+  .actions { margin-top:auto; padding-top:6px; display:flex; gap:12px; flex-wrap:wrap; font-size:14px; }
+  .video { position:relative; aspect-ratio:16/9; background:#000; }
+  .video iframe, .video img { position:absolute; inset:0; width:100%; height:100%; border:0; object-fit:cover; }
+  .video button { position:absolute; inset:0; width:100%; height:100%; background:transparent; border:0; cursor:pointer; }
+  .video button::after { content:"▶"; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:56px; height:40px; border-radius:10px; background:rgba(0,0,0,.7); color:#fff; font-size:18px; display:grid; place-items:center; }
+  .more { font-size:13px; color:var(--mute); }
+  .more a { margin-right:8px; }
+  .tags { display:flex; gap:6px; flex-wrap:wrap; }
+  .tags span { background:var(--tag); border-radius:999px; padding:2px 9px; font-size:12px; color:var(--mute); }
+  .photos { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:8px; }
+  .photos a { display:block; aspect-ratio:3/2; overflow:hidden; border-radius:8px; background:var(--tag); }
+  .photos img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .2s; }
+  .photos a:hover img { transform:scale(1.03); }
+  .papers li { margin-bottom:12px; }
+  .papers ul { padding-left:18px; }
+  footer { padding:34px 0; color:var(--mute); font-size:13px; }
+  img.shot { width:100%; display:block; background:#2b2f36; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Allan Valim Ribeiro da Fonseca</h1>
+    <p>Applied computer science (M.Sc. student, Hochschule Fulda). I build games, VR prototypes, robots that drive
+    themselves, and tools that read speech and old documents. This page collects the things that are finished
+    enough to show.</p>
+    <div class="links">
+      <a href="https://github.com/allan-valin">GitHub</a>
+      <a href="https://dshiryu.itch.io/">itch.io</a>
+      <a href="https://www.youtube.com/@dshiryu">YouTube</a>
+    </div>
+  </header>
+</div>
+<nav><div class="wrap">
+  <a href="#games">Games &amp; VR</a><a href="#software">Software &amp; robotics</a><a href="#tools">Small tools</a>
+  <a href="#research">Research</a><a href="#video">Animation &amp; film</a><a href="#photo">Photography</a>
+</div></nav>
+<div class="wrap">
+
+<section id="games">
+  <h2>Games &amp; VR</h2>
+  <p class="lead">Playable builds on <a href="https://dshiryu.itch.io/">itch.io</a>. Project sources in
+  <a href="https://github.com/allan-valin/Multimedia-Projects">Multimedia-Projects</a>.</p>
+  <div class="grid">
+    <article class="card">
+      <div class="video" data-yt="d5KGt78X4Zw"></div>
+      <div class="body">
+        <div class="meta">Unity · C# · 2024</div>
+        <h3>IPA Quest</h3>
+        <p>A Metroidvania where you collect the symbols of the International Phonetic Alphabet. Each symbol plays its sound. Bosses, abilities, a persistent world.</p>
+        <div class="more">Dev log: <a href="https://youtu.be/o40W4CSKxYI">1</a><a href="https://youtu.be/0MiXnWycQ1Y">2</a><a href="https://youtu.be/D8CVJgH5FyY">3</a><a href="https://youtu.be/lmDvVpGJ-9Q">4</a><a href="https://youtu.be/lhuoFkcW75Q">5</a><a href="https://youtu.be/d5KGt78X4Zw">6</a></div>
+        <div class="actions"><a href="https://dshiryu.itch.io/ipa-quest">Play</a><a href="https://github.com/allan-valin/Multimedia-Projects/tree/main/ipa-quest">Source</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="video" data-yt="0HEHauoTeX4"></div>
+      <div class="body">
+        <div class="meta">Unreal Engine 5.5 · OpenXR · Blueprints</div>
+        <h3>NewVRDrums</h3>
+        <p>VR drumming game in the spirit of Rock Band. Training stages, air drumming, two precision stages and 30+ patterns from different styles.</p>
+        <div class="more">Dev log: <a href="https://youtu.be/xFSqV9ts4kc">1</a><a href="https://youtu.be/C6ION-TzIEk">2</a><a href="https://youtu.be/0HEHauoTeX4">3</a></div>
+        <div class="actions"><a href="https://dshiryu.itch.io/newvrdrums">Download</a><a href="https://github.com/allan-valin/Multimedia-Projects/tree/main/newvrdrums">Source</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="video" data-yt="rxo0J-phc5k"></div>
+      <div class="body">
+        <div class="meta">Unreal Engine 5 · Blueprints</div>
+        <h3>LAGAGA</h3>
+        <p>Galaga clone with a roguelike twist: the first three levels replay the original patterns, then every 10 kills earns an upgrade.</p>
+        <div class="more">Versions: <a href="https://youtu.be/g9wgBNP4m7w">early</a><a href="https://youtu.be/rxo0J-phc5k">final</a></div>
+        <div class="actions"><a href="https://dshiryu.itch.io/lagaga">Play</a><a href="https://github.com/allan-valin/Multimedia-Projects/tree/main/lagaga">Source</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="video" data-yt="SlkjIsgrkFg"></div>
+      <div class="body">
+        <div class="meta">C++23 · OpenGL 4.6 · 2025/26</div>
+        <h3>OpenGL Game Prototype</h3>
+        <p>2D platformer written from scratch for the Computer Graphics course: handcrafted lighting, spike traps, a level editor.</p>
+        <div class="more">Builds: <a href="https://youtu.be/PyeexglXJ5c">early</a><a href="https://youtu.be/SlkjIsgrkFg">late</a></div>
+        <div class="actions"><a href="https://github.com/allan-valin/OpenGL_Game_Prototype">Source</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="body">
+        <div class="meta">Pure Data → browser · 2025</div>
+        <h3>GPS Tour Run</h3>
+        <p>Zombies, Run!-style audio tour: narration and effects fire when the runner reaches given coordinates. Prototyped in Pure Data, ported to a single web page with a real GPS mode.</p>
+        <div class="actions"><a href="https://allan-valin.github.io/puredata_gps_tour_running/">Run in browser</a><a href="https://github.com/allan-valin/puredata_gps_tour_running">Source</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="body">
+        <div class="meta">Arduino · 3D print</div>
+        <h3>Arduino Drumming</h3>
+        <p>Piezo sensor inside a 3D-printed snare shell triggers a snare sample. Small hardware sibling of NewVRDrums.</p>
+        <div class="actions"><a href="https://github.com/allan-valin/Arduino_Drumming">Source</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="software">
+  <h2>Software &amp; robotics</h2>
+  <div class="grid">
+    <article class="card">
+      <div class="video" data-yt="T_6b75PGNpw"></div>
+      <div class="body">
+        <div class="meta">ROS 2 · Nav2 · slam_toolbox</div>
+        <h3>Autonomous Volksbot</h3>
+        <p>Bring-up and tuning that lets a Volksbot differential-drive robot map an unknown indoor space and pick its own goals with frontier exploration. No new nodes: the work is the wiring and the parameters.</p>
+        <div class="more">Runs: <a href="https://youtu.be/T_6b75PGNpw">1</a><a href="https://youtu.be/JWfDaIo4NeI">2</a><a href="https://youtu.be/-dB20vLv-Fg">3</a></div>
+        <div class="actions"><a href="https://github.com/allan-valin/autonomous_driving_volksbot_nbv">Source</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="body">
+        <div class="meta">Python · FastAPI · Next.js · local VLM/OCR</div>
+        <h3>Desembarque</h3>
+        <p>Transcription and side-by-side verification of Brazilian ship passenger manifests (Arquivo Nacional, Santos and Rio). Cursive handwriting read by open-weight vision models, never asserting what the page does not say.</p>
+        <div class="actions"><a href="https://github.com/allan-valin/ocr-gene-docs">Source</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="body">
+        <div class="meta">Python · CPU-only benchmark</div>
+        <h3>Phonetic Eval</h3>
+        <p>Reproducible benchmark of nine speech-to-IPA model configurations over shared audio, scored by phone error rate and phonological feature error rate. Companion code to the survey below.</p>
+        <div class="actions"><a href="https://github.com/allan-valin/phonetic-eval">Source</a><a href="#research">Paper</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="body">
+        <div class="meta">Kotlin · Jetpack Compose · Room</div>
+        <h3>Workout</h3>
+        <p>Offline-first Android workout tracker with importable training cycles. Built by orchestrating Claude; a good record of what that workflow produces.</p>
+        <div class="actions"><a href="https://github.com/allan-valin/workout-app">Source</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="body">
+        <div class="meta">containerlab · gNMI</div>
+        <h3>DigSiViz &amp; DigSiNet</h3>
+        <p>Real-time visualisation of network digital twins (DigSiViz) and a multi-sibling digital-twin environment (DigSiNet). University projects I worked on.</p>
+        <div class="actions"><a href="https://github.com/allan-valin/digsiviz">DigSiViz</a><a href="https://github.com/allan-valin/digsinet">DigSiNet</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="body">
+        <div class="meta">Networking</div>
+        <h3>P2P file transfer</h3>
+        <p>Simple peer-to-peer file transfer.</p>
+        <div class="actions"><a href="https://github.com/allan-valin/P2P">Source</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="tools">
+  <h2>Small tools</h2>
+  <div class="grid">
+    <article class="card">
+      <a href="poketype/"><img class="shot" src="img/poketype.png" alt="PokeType with Fire and Flying selected" style="max-height:220px;object-fit:cover;object-position:top"></a>
+      <div class="body">
+        <div class="meta">Java 2020 → web</div>
+        <h3>PokeType</h3>
+        <p>Type-weakness calculator for competitive play. Unlike a 2×2 chart it stacks any number of defending types, which is what you need when a move like Forest's Curse adds a third one.</p>
+        <div class="actions"><a href="poketype/">Open</a><a href="https://github.com/allan-valin/Multimedia-Projects/tree/main/poketype">Original JAR</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="research">
+  <h2>Research &amp; writing</h2>
+  <div class="papers"><ul>
+    <li><a href="papers/2026-speech-to-ipa-survey.pdf">A Comparative Survey and Evaluation of Language-Agnostic Speech-to-IPA Transcription Systems</a> (2026).
+      Seven self-supervised speech-to-IPA approaches surveyed, the public ones re-evaluated on one benchmark with PER and PFER. Removing narrow diacritics cuts PER by 9 to 22 points while PFER barely moves. Code: <a href="https://github.com/allan-valin/phonetic-eval">phonetic-eval</a>.</li>
+    <li><a href="papers/2026-hausarbeit-arbeits-und-fuehrungstechniken.pdf">Arbeits- und Führungstechniken im interkulturellen Vergleich: Brasilien und Deutschland</a> (2026, German).
+      Leadership, communication and knowledge management compared across the two working cultures.</li>
+    <li>Machine Learning for Particle Counting (bachelor thesis, 2025). Automatic counting of ions measured by a scintillation counter in a synchrotron: algorithmic labelling of clear cases, manual labelling of the rest, networks trained on both. Research conducted at a heavy-ion research centre; PDF on request.</li>
+  </ul></div>
+</section>
+
+<section id="video">
+  <h2>Animation &amp; film</h2>
+  <div class="grid">
+    <article class="card">
+      <div class="video" data-yt="PU85iHkLb8Q"></div>
+      <div class="body">
+        <div class="meta">Blender · 2023</div>
+        <h3>3D short</h3>
+        <p>Course short film. I modelled and animated the segment from 0:30 to 1:00 and edited all cuts together.</p>
+        <div class="actions"><a href="https://github.com/allan-valin/Multimedia-Projects/tree/main/blender-animation">Scene file</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="video" data-yt="4o1PCR2Bwsg"></div>
+      <div class="body">
+        <div class="meta">DaVinci Resolve · 2022</div>
+        <h3>AV production short</h3>
+        <p>Group short film. Mine: the storyboard and the rough cut.</p>
+        <div class="more">Stages: <a href="https://youtu.be/dv04gdY5CBw">idea</a><a href="https://youtu.be/NxbNgtwK-fs">storyboard</a><a href="https://youtu.be/JiZ6InrlHv8">rough cut</a><a href="https://youtu.be/4o1PCR2Bwsg">final</a></div>
+        <div class="actions"><a href="https://github.com/allan-valin/Multimedia-Projects/tree/main/av-production">Storyboard &amp; shot order</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="photo">
+  <h2>Photography</h2>
+  <p class="lead">Environment shots from the digital photography course, 2023. Mostly HDR merges of 3 to 5 exposures at ISO 100, f/8.</p>
+  <div class="photos" id="photos"></div>
+</section>
+
+<footer>© Allan Valim Ribeiro da Fonseca · <a href="https://github.com/allan-valin/allan-valin.github.io">site source</a></footer>
+</div>
+<script>
+// YouTube: thumbnail first, iframe only on click (no third-party requests until the visitor asks).
+for (const v of document.querySelectorAll(".video[data-yt]")) {
+  const id = v.dataset.yt;
+  v.innerHTML = `<img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy"><button aria-label="Play video"></button>`;
+  v.querySelector("button").onclick = () => { v.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" title="YouTube video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`; };
+}
+const P = ["DSC_0068-HDR","DSC_0071-HDR","DSC_0074-HDR","DSC_0083-HDR","DSC_0086-HDR","DSC_0089-HDR","DSC_0095-HDR","DSC_0101-HDR","DSC_0110-HDR-2","DSC_0116-HDR","DSC_0119-HDR","DSC_0122-HDR","DSC_0125-HDR","DSC_0131-HDR","DSC_0133-HDR","DSC_0142-HDR","DSC_0145","DSC_0147-HDR","JON_3248-HDR","JON_3279-HDR","JON_3476","JON_3758-HDR"];
+const base = "https://raw.githubusercontent.com/allan-valin/Multimedia-Projects/main/photography/";
+document.getElementById("photos").innerHTML = P.map(n => `<a href="${base}${n}.jpg" target="_blank" rel="noopener"><img src="${base}thumb_${n}.jpg" alt="${n}" loading="lazy"></a>`).join("");
+</script>
+</body>
+</html>
