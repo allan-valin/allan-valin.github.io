@@ -72,9 +72,9 @@
     <div class="head"><strong>Research project (DigSiViz): Replaying Recorded Traffic in Network Digital Twins: Storage Granularity, Window Alignment, and Fidelity</strong><span class="when">2026</span></div>
     <div class="where">Fulda University of Applied Sciences, supervised by Prof. Dr. Sebastian Rieger</div>
     <ul>
-      <li>Migrated the visualization module's storage to time-series databases to record and replay network monitoring data</li>
-      <li>Studied storage efficiency and the granularity trade-offs of replaying recorded traffic metrics</li>
-      <li>Stack: Kafka, InfluxDB, Prometheus; manuscript in preparation (see Papers)</li>
+      <li>Replaced DigSiViz's 60-second in-memory history with InfluxDB, fed by Telegraf from the existing Kafka transport, with a 12-tier down-sampling scheme so recorded network telemetry can be kept and replayed</li>
+      <li>Measured replay fidelity across storage granularities: peak accuracy depends on window size and alignment relative to event duration; storing only the fields that are read cut ingest by 97.9%</li>
+      <li>Stack: InfluxDB, Telegraf, Grafana, Kafka, Docker, Python/Flask; manuscript in preparation (see Papers)</li>
     </ul>
   </div>
   <div class="entry">
@@ -89,21 +89,45 @@
 
   <h2>Other projects</h2>
   <div class="entry">
-    <div class="head"><strong>Team project: autonomous robot scanning (ROS2)</strong><span class="when">2026</span></div>
-    <div class="where">Fulda University of Applied Sciences</div>
+    <div class="head"><strong>Speech-controlled robot: “LLM zur Steuerung des CityBots”</strong><span class="when">09/2026</span></div>
+    <div class="where">Master lab course Autonomous Mobile Robots, Fulda University of Applied Sciences (team of two)</div>
     <ul>
-      <li>Developed the next-best-view exploration package that chooses scan poses for a mobile robot</li>
-      <li>Integrated IMU sensor fusion (Madgwick filter, EKF) and documented the setup for four robots</li>
-      <li>Stack: ROS2 Jazzy, Nav2, SLAM Toolbox, OctoMap</li>
+      <li>Built a German voice-control pipeline for a ROS 2 Nav2 robot: Whisper speech recognition, a rule-based grammar with an LLM fallback (qwen3:32b via Ollama), command validation and Piper speech output</li>
+      <li>Cut latency by moving Whisper to the lab GPU server (about 0.1 s transcription, about 0.7 s from end of utterance to motion on the grammar path), with Vosk for wake word and fast stop detection</li>
+      <li>Developed in Gazebo and demonstrated live on a VolksBot; wrote most of the code</li>
     </ul>
   </div>
   <div class="entry">
-    <div class="head"><strong>Seminar: large language models in process mining</strong><span class="when">2026</span></div>
-    <div class="where">Fulda University of Applied Sciences</div>
+    <div class="head"><strong>Team project: “Robotergestützte 3D-Kartierungspipeline” (robot-assisted 3D mapping pipeline)</strong><span class="when">2026</span></div>
+    <div class="where">Fulda University of Applied Sciences (team of six)</div>
     <ul>
-      <li>Presented and compared current work on LLM-based process mining and its benchmarks</li>
+      <li>Integrated and tuned the autonomous-exploration part (ROS 2 Jazzy, Nav2, SLAM Toolbox, an existing frontier-exploration package) that drove VolksBot robots to scan positions for a RIEGL 3D laser scanner</li>
+      <li>Wrote the laptop/robot launch files and tuned Nav2 and exploration parameters (footprint, inflation, velocity limits) so the robots passed through doors and out of dead ends</li>
+      <li>Ran test drives, campus Wi-Fi coverage measurements and the literature research on 3D next-best-view planning</li>
     </ul>
   </div>
+  <div class="entry">
+    <div class="head"><strong>Seminar paper: “Using LLMs for Process Mining Tasks”</strong><span class="when">2026</span></div>
+    <div class="where">Master seminar Algorithms of Process Mining, Fulda University of Applied Sciences (with Felix Krull)</div>
+    <ul>
+      <li>Co-wrote the paper and gave three presentations; my part covered in-context learning vs. LoRA fine-tuning for semantics-aware process-mining tasks</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="head"><strong>Desembarque: transcription of historical passenger manifests</strong><span class="when">2026</span></div>
+    <div class="where">Own project</div>
+    <ul>
+      <li>Transcribes handwritten Brazilian ship passenger lists (Arquivo Nacional) with open-weight vision models and shows each reading next to the page for verification; built never to assert what the page does not say. Code: <a href="https://github.com/allan-valin/ocr-gene-docs">ocr-gene-docs</a></li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="head"><strong>IPA Quest</strong><span class="when">2024</span></div>
+    <div class="where">Game project, Unity</div>
+    <ul>
+      <li>Metroidvania in which the player collects the symbols of the International Phonetic Alphabet, each playing its sound. <a href="https://dshiryu.itch.io/ipa-quest">Play</a></li>
+    </ul>
+  </div>
+  <p class="note">Further software, game and media projects: <a href="/">allan-valin.github.io</a></p>
 
   <h2>Professional experience</h2>
   <div class="entry">
@@ -128,9 +152,11 @@
 
   <h2>Skills and languages</h2>
   <table>
-    <tr><td>Programming</td><td>Python (recent projects); Java, C/C++ and JavaScript at coursework level</td></tr>
-    <tr><td>ML and speech</td><td>TensorFlow/Keras (CNNs; bachelor's thesis and ML coursework), NumPy, Matplotlib; phone-recognition evaluation (PER, PFER)</td></tr>
-    <tr><td>Data and systems</td><td>Kafka, InfluxDB, Prometheus, Docker, Linux servers, ROS2</td></tr>
+    <tr><td>Programming</td><td>Python (research, thesis and course projects); Java, C, C++ at coursework level; basic C#, JavaScript, Kotlin, Haskell</td></tr>
+    <tr><td>ML and speech</td><td>TensorFlow/Keras, PyTorch (basic), NumPy, Matplotlib; speech tools (Whisper, Vosk, Allosaurus, Piper); phone-recognition evaluation (PER, PFER)</td></tr>
+    <tr><td>Data and systems</td><td>Linux, Git, Docker, InfluxDB, Telegraf, Grafana, Containerlab; exposure to Kafka</td></tr>
+    <tr><td>Robotics</td><td>ROS 2 (Nav2, SLAM Toolbox), Gazebo</td></tr>
+    <tr><td>Graphics and games</td><td>Unity, Unreal Engine 5, OpenGL (C++), Blender</td></tr>
     <tr><td>Writing</td><td>LaTeX; 7 years of professional writing and copy editing in Portuguese (news, tutorials, reviews)</td></tr>
     <tr><td>Languages</td><td>Portuguese (native), German (C1, DSH-2), English (C1, IELTS and TOEFL), French (good, spoken), Latin (reading), Ancient Greek (basic)</td></tr>
   </table>

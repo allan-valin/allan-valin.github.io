@@ -72,9 +72,9 @@
     <div class="head"><strong>Projeto de pesquisa (DigSiViz): Replaying Recorded Traffic in Network Digital Twins: Storage Granularity, Window Alignment, and Fidelity</strong><span class="when">2026</span></div>
     <div class="where">Hochschule Fulda, sob orientação do Prof. Dr. Sebastian Rieger</div>
     <ul>
-      <li>Migrei o armazenamento do módulo de visualização para bancos de dados de séries temporais, para gravar e reproduzir dados de monitoramento de rede</li>
-      <li>Estudei a eficiência do armazenamento e os trade-offs de granularidade na reprodução de métricas de tráfego gravadas</li>
-      <li>Tecnologias: Kafka, InfluxDB, Prometheus; manuscrito em preparação (ver Artigos e manuscritos)</li>
+      <li>Substituí o histórico em memória de 60 segundos do DigSiViz pelo InfluxDB, alimentado via Telegraf a partir do transporte Kafka já existente, com downsampling em 12 níveis, para que a telemetria de rede gravada possa ser armazenada e reproduzida</li>
+      <li>Medi a fidelidade da reprodução em diferentes granularidades de armazenamento: a precisão dos picos depende do tamanho e do alinhamento da janela em relação à duração do evento; armazenar só os campos efetivamente lidos reduziu o volume de ingestão em 97,9%</li>
+      <li>Tecnologias: InfluxDB, Telegraf, Grafana, Kafka, Docker, Python/Flask; manuscrito em preparação (ver Artigos e manuscritos)</li>
     </ul>
   </div>
   <div class="entry">
@@ -89,21 +89,45 @@
 
   <h2>Outros projetos</h2>
   <div class="entry">
-    <div class="head"><strong>Projeto em equipe: varredura autônoma com robôs (ROS2)</strong><span class="when">2026</span></div>
-    <div class="where">Hochschule Fulda</div>
+    <div class="head"><strong>Robô controlado por voz: “LLM zur Steuerung des CityBots”</strong><span class="when">09/2026</span></div>
+    <div class="where">Disciplina prática de mestrado Robôs Móveis Autônomos, Hochschule Fulda (dupla)</div>
     <ul>
-      <li>Desenvolvi o pacote de exploração next-best-view, que escolhe as poses de varredura de um robô móvel</li>
-      <li>Integrei a fusão de sensores com a IMU (filtro de Madgwick, EKF) e documentei a configuração de quatro robôs</li>
-      <li>Tecnologias: ROS2 Jazzy, Nav2, SLAM Toolbox, OctoMap</li>
+      <li>Desenvolvi um pipeline de comando de voz em alemão para um robô ROS 2 com Nav2: reconhecimento de fala com Whisper, gramática baseada em regras com fallback para LLM (qwen3:32b via Ollama), validação dos comandos e saída de voz com Piper</li>
+      <li>Reduzi a latência levando o Whisper para o servidor com GPU do laboratório (cerca de 0,1 s de transcrição e 0,7 s do fim da frase até o movimento pela gramática), com Vosk para a palavra de ativação e a detecção rápida do comando de parada</li>
+      <li>Desenvolvido no Gazebo e demonstrado ao vivo em um VolksBot; escrevi a maior parte do código</li>
     </ul>
   </div>
   <div class="entry">
-    <div class="head"><strong>Seminário: grandes modelos de linguagem (LLMs) em mineração de processos</strong><span class="when">2026</span></div>
-    <div class="where">Hochschule Fulda</div>
+    <div class="head"><strong>Projeto em equipe: “Robotergestützte 3D-Kartierungspipeline” (pipeline de mapeamento 3D com robôs)</strong><span class="when">2026</span></div>
+    <div class="where">Hochschule Fulda (equipe de seis)</div>
     <ul>
-      <li>Apresentei e comparei trabalhos recentes sobre mineração de processos com LLMs e seus benchmarks</li>
+      <li>Integrei e ajustei a parte de exploração autônoma (ROS 2 Jazzy, Nav2, SLAM Toolbox, um pacote de frontier exploration já existente) que levava robôs VolksBot até as posições de varredura de um scanner a laser 3D RIEGL</li>
+      <li>Escrevi os launch files para laptop e robô e ajustei parâmetros do Nav2 e da exploração (footprint, inflação, limites de velocidade) para que os robôs passassem por portas e saíssem de becos sem saída</li>
+      <li>Fiz testes de percurso, medições de cobertura de Wi-Fi no campus e a pesquisa bibliográfica sobre planejamento next-best-view em 3D</li>
     </ul>
   </div>
+  <div class="entry">
+    <div class="head"><strong>Trabalho de seminário: “Using LLMs for Process Mining Tasks”</strong><span class="when">2026</span></div>
+    <div class="where">Seminário de mestrado Algoritmos de Process Mining, Hochschule Fulda (com Felix Krull)</div>
+    <ul>
+      <li>Escrevemos o trabalho em dupla e fizemos três apresentações; minha parte tratou de in-context learning vs. fine-tuning com LoRA em tarefas de process mining sensíveis à semântica</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="head"><strong>Desembarque: transcrição de listas históricas de passageiros</strong><span class="when">2026</span></div>
+    <div class="where">Projeto próprio</div>
+    <ul>
+      <li>Transcreve listas manuscritas de passageiros de navios (Arquivo Nacional) com modelos de visão de pesos abertos e mostra cada leitura ao lado da página para conferência; feito para nunca afirmar o que a página não diz. Código: <a href="https://github.com/allan-valin/ocr-gene-docs">ocr-gene-docs</a></li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="head"><strong>IPA Quest</strong><span class="when">2024</span></div>
+    <div class="where">Jogo, Unity</div>
+    <ul>
+      <li>Metroidvania em que o jogador coleta os símbolos do Alfabeto Fonético Internacional, cada um tocando seu som. <a href="https://dshiryu.itch.io/ipa-quest">Jogar</a></li>
+    </ul>
+  </div>
+  <p class="note">Outros projetos de software, jogos e mídia: <a href="/pt/">allan-valin.github.io</a></p>
 
   <h2>Experiência profissional</h2>
   <div class="entry">
@@ -128,9 +152,11 @@
 
   <h2>Competências e idiomas</h2>
   <table>
-    <tr><td>Programação</td><td>Python (projetos recentes); Java, C/C++ e JavaScript no nível das disciplinas do curso</td></tr>
-    <tr><td>ML e fala</td><td>TensorFlow/Keras (CNNs; trabalho de conclusão de curso e disciplinas de ML), NumPy, Matplotlib; avaliação de reconhecimento de fones (PER, PFER)</td></tr>
-    <tr><td>Dados e sistemas</td><td>Kafka, InfluxDB, Prometheus, Docker, servidores Linux, ROS2</td></tr>
+    <tr><td>Programação</td><td>Python (projetos de pesquisa, TCC e disciplinas); Java, C, C++ no nível das disciplinas do curso; noções de C#, JavaScript, Kotlin, Haskell</td></tr>
+    <tr><td>ML e fala</td><td>TensorFlow/Keras, PyTorch (básico), NumPy, Matplotlib; ferramentas de fala (Whisper, Vosk, Allosaurus, Piper); avaliação de reconhecimento de fones (PER, PFER)</td></tr>
+    <tr><td>Dados e sistemas</td><td>Linux, Git, Docker, InfluxDB, Telegraf, Grafana, Containerlab; contato com Kafka</td></tr>
+    <tr><td>Robótica</td><td>ROS 2 (Nav2, SLAM Toolbox), Gazebo</td></tr>
+    <tr><td>Computação gráfica e jogos</td><td>Unity, Unreal Engine 5, OpenGL (C++), Blender</td></tr>
     <tr><td>Escrita</td><td>LaTeX; 7 anos de redação e revisão profissional de textos em português (notícias, tutoriais, análises)</td></tr>
     <tr><td>Idiomas</td><td>Português (nativo), alemão (C1, DSH-2), inglês (C1, IELTS e TOEFL), francês (bom, oral), latim (leitura), grego antigo (básico)</td></tr>
   </table>
