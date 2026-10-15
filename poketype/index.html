@@ -33,10 +33,15 @@
   #summary { color:var(--mute); font-size:14px; margin-left:auto; }
   footer { color:var(--mute); font-size:13px; margin-top:14px; }
   a { color:var(--accent); }
+  .bar { display:flex; justify-content:space-between; align-items:center; font-size:14px; margin-bottom:10px; }
+  .bar .home { color:var(--mute); text-decoration:none; }
+  .lang { display:flex; gap:8px; } .lang a { opacity:.45; } .lang a[aria-current="page"], .lang a:hover { opacity:1; }
+  .lang img { width:26px; height:17px; display:block; border-radius:3px; box-shadow:0 0 0 1px var(--line); }
 </style>
 </head>
 <body>
 <main>
+  <div class="bar"><a class="home" href="/">← Home</a><div class="lang"><a href="/poketype/" hreflang="en" aria-current="page"><img src="/assets/flag-en.svg" alt="English" title="English"></a><a href="/de/poketype/" hreflang="de"><img src="/assets/flag-de.svg" alt="Deutsch" title="Deutsch"></a><a href="/pt/poketype/" hreflang="pt-BR"><img src="/assets/flag-pt.svg" alt="Português (Brasil)" title="Português (Brasil)"></a></div></div>
   <header>
     <div><h1>PokeType</h1><p>Defending type(s) → damage taken from each attacking type. Add as many different types as you like.</p></div>
   </header>

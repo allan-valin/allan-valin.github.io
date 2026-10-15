@@ -5,57 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Allan Valim</title>
 <meta name="description" content="Portfolio: games, VR, robotics, speech and OCR research, photography.">
-<style>
-  :root { --bg:#f6f5f1; --fg:#1c1c1e; --mute:#66666c; --card:#fff; --line:#e3e2dc; --accent:#3452c8; --tag:#eceae3; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#131518; --fg:#e8e6e1; --mute:#9094a0; --card:#1b1e24; --line:#2a2e37; --accent:#8da2fb; --tag:#262a33; } }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif; }
-  a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
-  .wrap { max-width:1000px; margin:0 auto; padding:0 16px; }
-  header { padding:40px 0 20px; }
-  header h1 { margin:0; font-size:32px; letter-spacing:-.01em; }
-  header p { margin:8px 0 0; color:var(--mute); max-width:640px; }
-  nav { position:sticky; top:0; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); z-index:5; }
-  nav .wrap { display:flex; gap:4px 18px; flex-wrap:wrap; padding:10px 16px; font-size:14px; }
-  nav a { color:var(--fg); }
-  .links { margin-top:14px; display:flex; gap:14px; flex-wrap:wrap; font-size:14px; }
-  section { padding:34px 0 6px; }
-  h2 { font-size:22px; margin:0 0 6px; }
-  .lead { color:var(--mute); margin:0 0 18px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(290px,1fr)); gap:16px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
-  .card .body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; flex:1; }
-  .card h3 { margin:0; font-size:17px; }
-  .card p { margin:0; color:var(--mute); font-size:14px; }
-  .meta { font-size:12px; color:var(--mute); text-transform:uppercase; letter-spacing:.05em; }
-  .actions { margin-top:auto; padding-top:6px; display:flex; gap:12px; flex-wrap:wrap; font-size:14px; }
-  .video { position:relative; aspect-ratio:16/9; background:#000; }
-  .video iframe, .video img { position:absolute; inset:0; width:100%; height:100%; border:0; object-fit:cover; }
-  .video button { position:absolute; inset:0; width:100%; height:100%; background:transparent; border:0; cursor:pointer; }
-  .video button::after { content:"▶"; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:56px; height:40px; border-radius:10px; background:rgba(0,0,0,.7); color:#fff; font-size:18px; display:grid; place-items:center; }
-  .more { font-size:13px; color:var(--mute); }
-  .more a { margin-right:8px; }
-  .tags { display:flex; gap:6px; flex-wrap:wrap; }
-  .tags span { background:var(--tag); border-radius:999px; padding:2px 9px; font-size:12px; color:var(--mute); }
-  .photos { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:8px; }
-  .photos a { display:block; aspect-ratio:3/2; overflow:hidden; border-radius:8px; background:var(--tag); }
-  .photos img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .2s; }
-  .photos a:hover img { transform:scale(1.03); }
-  .papers li { margin-bottom:12px; }
-  .papers ul { padding-left:18px; }
-  footer { padding:34px 0; color:var(--mute); font-size:13px; }
-  img.shot { width:100%; display:block; background:#2b2f36; }
-</style>
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="alternate" hreflang="en" href="https://allan-valin.github.io/">
+<link rel="alternate" hreflang="de" href="https://allan-valin.github.io/de/">
+<link rel="alternate" hreflang="pt-BR" href="https://allan-valin.github.io/pt/">
 </head>
 <body>
 <div class="wrap">
+  <div class="topbar">
+    <div class="lang"><a href="/" hreflang="en" aria-current="page"><img src="/assets/flag-en.svg" alt="English" title="English"></a><a href="/de/" hreflang="de"><img src="/assets/flag-de.svg" alt="Deutsch" title="Deutsch"></a><a href="/pt/" hreflang="pt-BR"><img src="/assets/flag-pt.svg" alt="Português (Brasil)" title="Português (Brasil)"></a></div>
+  </div>
   <header>
     <h1>Allan Valim Ribeiro da Fonseca</h1>
     <p>Applied computer science (M.Sc. student, Hochschule Fulda). I build games, VR prototypes, robots that drive
     themselves, and tools that read speech and old documents. This page collects the things that are finished
     enough to show.</p>
     <div class="links">
+      <a href="/cv/">CV</a>
+      <a href="/cv/academic.html">Academic CV</a>
       <a href="https://github.com/allan-valin">GitHub</a>
       <a href="https://dshiryu.itch.io/">itch.io</a>
     </div>
@@ -191,12 +158,12 @@
   <h2>Small tools</h2>
   <div class="grid">
     <article class="card">
-      <a href="poketype/"><img class="shot" src="img/poketype.png" alt="PokeType with Fire and Flying selected" style="max-height:220px;object-fit:cover;object-position:top"></a>
+      <a href="/poketype/"><img class="shot" src="/img/poketype.png" alt="PokeType with Fire and Flying selected" style="max-height:220px;object-fit:cover;object-position:top"></a>
       <div class="body">
         <div class="meta">Java 2020 → web</div>
         <h3>PokeType</h3>
         <p>Type-weakness calculator for competitive play. Unlike a 2×2 chart it takes any number of defending types, which is what you need when a move like Forest's Curse adds a third one.</p>
-        <div class="actions"><a href="poketype/">Open</a><a href="https://github.com/allan-valin/Multimedia-Projects/tree/main/poketype">Original JAR</a></div>
+        <div class="actions"><a href="/poketype/">Open</a><a href="https://github.com/allan-valin/Multimedia-Projects/tree/main/poketype">Original JAR</a></div>
       </div>
     </article>
   </div>
@@ -205,11 +172,15 @@
 <section id="research">
   <h2>Research &amp; writing</h2>
   <div class="papers"><ul>
-    <li><a href="papers/2026-speech-to-ipa-survey.pdf">A Comparative Survey and Evaluation of Language-Agnostic Speech-to-IPA Transcription Systems</a> (2026).
+    <li><a href="/papers/2026-speech-to-ipa-survey.pdf">A Comparative Survey and Evaluation of Language-Agnostic Speech-to-IPA Transcription Systems</a> (2026).
       Seven self-supervised speech-to-IPA approaches surveyed, the public ones re-evaluated on one benchmark with PER and PFER. Removing narrow diacritics cuts PER by 9 to 22 points while PFER barely moves. Code: <a href="https://github.com/allan-valin/phonetic-eval">phonetic-eval</a>.</li>
-    <li><a href="papers/2026-hausarbeit-arbeits-und-fuehrungstechniken.pdf">Arbeits- und Führungstechniken im interkulturellen Vergleich: Brasilien und Deutschland</a> (2026, German).
+    <li><a href="/papers/2026-hausarbeit-arbeits-und-fuehrungstechniken.pdf">Arbeits- und Führungstechniken im interkulturellen Vergleich: Brasilien und Deutschland</a> (2026, German).
       Leadership, communication and knowledge management compared across the two working cultures.</li>
-    <li><a href="papers/2025-bachelor-thesis-ml-particle-counting.pdf">Machine Learning for Particle Counting</a> (bachelor thesis, 2025). Automatic counting of ions measured by a scintillation counter in a synchrotron: algorithmic labelling of clear cases, manual labelling of the rest, networks trained on both. Research conducted at a heavy-ion research centre; the ML code base was provided, my part was the labelling pipeline, the manual labelling and the evaluation. Cover and declaration pages removed. My two scripts: <a href="https://github.com/allan-valin/allan-valin.github.io/tree/main/papers/thesis-code">thesis-code</a>.</li>
+    <li><a href="/papers/2025-bachelor-thesis-ml-particle-counting.pdf">Machine Learning for Particle Counting</a> (bachelor thesis, 2025). Automatic counting of ions measured by a scintillation counter in a synchrotron: algorithmic labelling of clear cases, manual labelling of the rest, networks trained on both. Research conducted at a heavy-ion research centre; the ML code base was provided, my part was the labelling pipeline, the manual labelling and the evaluation. Cover and declaration pages removed. My two scripts: <a href="https://github.com/allan-valin/allan-valin.github.io/tree/main/papers/thesis-code">thesis-code</a>.</li>
+    <li><span>Replaying Recorded Traffic in Network Digital Twins: Storage Granularity, Window Alignment, and Fidelity</span> (with F. Stumpf and S. Rieger, in preparation, 2026).
+      Storage and replay of network monitoring data in time-series databases for the DigSiViz visualisation. Code: <a href="https://github.com/allan-valin/digsiviz">digsiviz</a>.</li>
+    <li><a href="/papers/2013-monografia-virgilio-marao-gramatico.pdf">Virgílio Marão Gramático: Tradução de uma Paródia</a> (undergraduate monograph in linguistics, UFPR, 2013, Portuguese).
+      Partial Latin–Portuguese translation of the first four epitomes of Virgilius Maro Grammaticus, a 7th-century parody of Latin grammar, with a comparison to Donatus and to an Italian translation.</li>
   </ul></div>
 </section>
 
