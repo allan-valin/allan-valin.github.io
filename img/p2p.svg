@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1051 614" role="img" aria-label="Two files with arrows going both ways between them">
+  <rect width="1051" height="614" fill="#2b2f36"/>
+  <defs>
+    <marker id="head" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8da2fb"/>
+    </marker>
+    <g id="sheet">
+      <path d="M0,0 H170 L230,60 V300 H0 Z" fill="#eceae3"/>
+      <path d="M170,0 V60 H230 Z" fill="#c8c6be"/>
+      <g fill="#a0a4ae">
+        <rect x="35" y="95" width="160" height="10" rx="5"/><rect x="35" y="127" width="160" height="10" rx="5"/>
+        <rect x="35" y="159" width="160" height="10" rx="5"/><rect x="35" y="191" width="160" height="10" rx="5"/>
+        <rect x="35" y="223" width="160" height="10" rx="5"/><rect x="35" y="255" width="90" height="10" rx="5"/>
+      </g>
+    </g>
+  </defs>
+  <use href="#sheet" x="105" y="157"/>
+  <use href="#sheet" x="716" y="157"/>
+  <g fill="none" stroke="#8da2fb" stroke-width="20" stroke-linecap="round" marker-end="url(#head)">
+    <path d="M370,230 C430,90 620,90 680,230"/>
+    <path d="M681,384 C621,524 431,524 371,384"/>
+  </g>
+</svg>
