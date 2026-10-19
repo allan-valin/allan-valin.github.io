@@ -19,6 +19,10 @@ h2 { font-size:22px; margin:0 0 6px; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
 .card .body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; flex:1; }
 .card h3 { margin:0; font-size:17px; }
+.card h3 a { color:inherit; text-decoration:none; }
+.card h3 a:hover { text-decoration:underline; }
+.card { transition: transform .15s, box-shadow .15s; }
+.card:has(> a > img.shot):hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgb(0 0 0 / .12); }
 .card p { margin:0; color:var(--mute); font-size:14px; }
 .meta { font-size:12px; color:var(--mute); text-transform:uppercase; letter-spacing:.05em; }
 .actions { margin-top:auto; padding-top:6px; display:flex; gap:12px; flex-wrap:wrap; font-size:14px; }
